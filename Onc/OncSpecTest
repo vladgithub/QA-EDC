@@ -1,0 +1,2874 @@
+----------------------------------------------------------------------------------
+
+RX screen 
+
+
+o	Remove all elements in the final screen except Line of Therapy.  These will be replaced with enhanced switching data (itemized below) that will better capture source of business.
+	Remove Treatment Intent
+	Remove Cycled Regimen and both child questions when Yes/No selected.
+	Remove Schedule
+	Remove is patient currently enrolled in a patient assistance program for this treatment
+ 
+o	V. 2.3: Ask the following questions for all patient visits where either a single agent or a combo agent is input.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+	The word current should be underlined
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+o	After completing the Rx screens and hitting NEXT on the Diagnosis screen, then switching will be asked (No change required.  Illustrated only)
+o	 
+o	Switching screen will be significantly changed and will trigger based upon 3 different events.
+	Trigger Event #1: Physician indicated that the patient received a 2nd, 3rd, 4th, or 5th line or greater therapy.  Note: if the doctor inputs Rx1 = 1st Line and Rx2 = 2nd Line, then it will be considered 2nd Line (higher of the two) 
+•	Ask “In this calendar month was a decision made to change the treatment/regimen for this PT?” Yes/No boxes.  Note: nothing else should be populated until the physician selects an answer.
+•	If Yes, then ask “primary reason for recent change” Also ask “What treatment/regimen was this PT on prior to the current treatment/regimen?”
+•	 
+•	UPDATED V. 2.6: If No, then the following questions will be asked and line of therapy will be piped in.
+•	 
+•	When adding the prior regimen, the form strength should be asked if it is available for the brand.  This would apply to both instances regardless of yes/no in trigger event #1.
+	Trigger Event #2: Physician indicated that the patient received 1st line therapy OR we did not ask line of therapy (e.g. Adjuvant in Breast Cancer logic branch)  Note: Maintenance Metastatic and Other Metastatic will be classified under trigger event #2. 
+•	Ask “In this calendar month was a decision made to change the treatment/regimen for this PT?” Yes/No boxes.  Note: nothing else should be populated until the physician selects an answer.
+•	If Yes, then ask “primary reason for recent change” Also ask “What treatment/regimen was this PT on prior to the current treatment/regimen?” 
+•	When adding the prior regimen, the form strength should be asked if it is available for the brand.
+•	 
+•	If No, then the survey ends
+•	 
+	Trigger Event #3: Physician indicated that the patient did not receive any drug therapy.  (i.e. selected that the patient is under no drug therapy for the diagnosis)  
+•	Ask “Was the decision made to discontinue treatment this calendar month for this patient?”  Note: nothing else should be populated until the physician selects an answer.
+•	If Yes, then ask “primary reason for recent discontinuation”  Also ask, “What treatment/regimen was this patient on prior to the discontinuation” 
+•	When adding the prior regimen, the form strength should be asked if it is available for the brand.
+•	
+•	 
+•	If No, then allow the survey to end.
+	Switch/Discontinuation Reasons Pick List
+•	Note that the pick list will be the same under trigger events 1, 2, and 3 and will include the following.  This is the same pick list that exists in the prior version of the software with the exception of the addition of Treatment goal met and the removal of the please specify in Other. 
+•	 
+
+
+
+
+
+
+Oncology Managed Care Question Placement
+Q.  What impact did managed care/reimbursement have on your treatment?
+
+1.	not aware of the patient’s treatment coverage 
+2.	aware but did not consider the patient’s coverage for treatment choice 
+3.	aware and patient’s coverage allowed me to prescribe my first choice 
+4.	aware and patient’s coverage led me to prescribe something other than my first choice 
+
+•	The question should be placed at the end of the last question:
+Intended duration of treatment since initiation of this treatment/regimen.  
+
+•	If Previously Diagnosed place the Managed Care question after:  In this calendar month was decision made to change the treatment/regimen for this patient.
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Oncology Supportive Care Managed Care Question Placement
+Q.  What impact did managed care/reimbursement have on your treatment?
+
+1.	not aware of the patient’s treatment coverage 
+2.	aware but did not consider the patient’s coverage for treatment choice 
+3.	aware and patient’s coverage allowed me to prescribe my first choice 
+4.	aware and patient’s coverage led me to prescribe something other than my first choice 
+
+If product is Supportive Care brand ask the Managed Care Question after Coupon Checkbox.
+ 
+
+
+
+
+Oncology Non-Oncology Diagnosis Managed Care Question Placement
+
+Q.  What impact did managed care/reimbursement have on your treatment?
+
+1.	not aware of the patient’s treatment coverage 
+2.	aware but did not consider the patient’s coverage for treatment choice 
+3.	aware and patient’s coverage allowed me to prescribe my first choice 
+4.	aware and patient’s coverage led me to prescribe something other than my first choice 
+
+If Non-Onc Diagnosis placement of the question is the same as in PCP software.
+
+ 
+
+
+----------------------------------------------------------------------------------
+1.	RCC Tumor Diagnosis
+	 
+
+“Current Site” Removed in 3.0
+	Current Site:
+•	Local
+•	Local-Recurrent
+•	Regional
+•	Regional-Recurrent
+•	Distant/Metastatic
+•	Unknown
+
+•	 
+	Stage at diagnosis:
+•	0
+•	I
+•	II
+•	III
+•	IV
+•	Unknown
+•	 
+	Disease Status:  (same as solid tumor)
+•	Neo-Adjuvant
+•	Adjuvant
+•	Metastatic    (*LOT*)
+•	No Evidence of Disease (NED)
+
+•	If “Metastatic” then ask:  Location of Metastases:  
+
+•	 
+
+Screen #4 (Rx) relationship to DISEASE STATUS CHOICE with LINE OF THERAPY:
+Only ask if Line of Therapy based on the choice within “disease status”.  Those trigger choices are marked w/ (*LOT*).  When any of these Disease Status choices are selected, then Line of Therapy should appear on Screen #4 and choices should include:
+•	1st Line 
+•	2nd Line
+•	3rd Line
+•	4th Line
+•	5th Line or greater
+•	Maintenance
+•	Other
+•	 
+
+	ECOG Performance Status: 
+•	0
+•	1
+•	2
+•	3
+•	4
+•	Unknown
+•	 
+
+
+ 
+Add new field:
+•	Did Pt have a nephrectomy?
+	Yes
+	No, but planned/scheduled
+	No
+	Unknown
+ 
+
+
+New question for RCC treatment branch:
+
+
+Prognostic Level:
+Drop down options
+Poor
+Intermediate
+Favorable
+Unknown 
+Question should be after Did pt have a nephrectomy
+Required Field
+
+ 
+
+
+In RCC branch (Indicator ID 43), ask RCC Histology:
+
+RCC Histology
+
+
+select histology	Clear Cell
+Non-Clear Cell
+Not Tested
+Unknown 
+
+PLACEMENT OF QUESTION: Appear between ECOG Performance Status and Did patient have a Nephrectomy?.
+
+Please note that question is not dependent on any other question selection within the RCC branch
+
+ 
+Only one answer allowed
+
+In RCC branch (Indicator ID 43), change the answer choice of “Good” to “Favorable” in the RCC Prognostic Level question:
+
+ 
+
+
+
+o	Ask the following questions for all patient visits for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+
+-------------------------------------------------------------------------------------------------------
+2.
+Multiple Myeloma Diagnosis:
+	   
+	Stage at diagnosis:
+•	I
+•	II
+•	III
+•	Unknown
+•	 
+
+Disease Status:
+
+	Diagnosed, but not treated
+	Initial treatment 
+	Maintenance Treatment (lot)
+	Remission (lot)
+	Relapse/ Refractory (lot)
+•	 
+
+Rx Screen relationship to LINE OF THERAPY FOR MMS:
+Only ask if Line of Therapy based on the choice within “disease status”.  Those trigger choices are marked w/ (*LOT*).  When any of these Disease Status choices are selected, then Line of Therapy should appear on Screen #4 and choices should include:
+
+•	2nd Line
+•	3rd Line
+•	4th Line or greater
+•	 
+
+	ECOG Performance Status
+•	0
+•	1
+•	2
+•	3
+•	4
+•	Unknown
+•	 
+	Transplant status (Required field)
+•	Not a candidate
+•	Pre-transplant
+•	Post-transplant
+•	Unknown
+•	 
+
+
+o	Ask the following questions for all patient visits for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+
+--------------------------------------------------------------------------------------------------------
+3.
+
+Prostate Cancer Diagnosis: 
+In the Prostate Cancer Oncology Patient Visit survey branch (Indicator ID 46), delete, keep and add the following answer choices for the question “Stage at Diagnosis” (no change to question verbiage).
+
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+
+•	Delete:
+1.	II
+
+
+•	Keep: 
+1.	I
+2.	III
+3.	IV
+4.	Unknown 
+
+
+•	Add New:
+1.	IIA
+2.	IIB
+
+ 
+
+•	Values:
+6 = IIA
+7 = IIB
+
+ 
+
+										
+Oncology Prostate Cancer Patient Visit – Add “Current Stage” Question
+Req 2
+In the Prostate Cancer Oncology Patient Visit survey branch (Indicator ID 46), add the following new question “Current Stage” with the following answer choices.
+
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory if asked
+•	Select one answer
+•	Question ID: 6
+•	Pop ID: OncPtCurrentStage
+•	PLACEMENT OF QUESTION: Appear after “Disease Status”
+
+
+ 	 
+
+•	Values:
+1 = I
+2 = IIA
+3 = IIB
+4 = III
+5 = PSA (Biochemical) Recurrence Only
+6 = IV
+7 = Unknown
+
+
+														
+
+Oncology Prostate Cancer Patient Visit – Add “Location of Metastases” Question
+Req 3
+In the Prostate Cancer Oncology Patient Visit survey branch (Indicator ID 46), add the following new question “Location of Metastases” with the following answer choices.
+
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory if asked.  Ask when:
+o	Current Stage is “IV”
+•	Select one answer
+•	Question ID: 7
+•	Pop ID: PtMetastaticLocation
+•	PLACEMENT OF QUESTION: Appear after “Current Stage”
+
+ 		 
+
+•	Values:
+1 = Bone
+2 = Brain
+3 = Lung
+4 = Liver
+5 = Other Visceral
+6 = Lymph Nodes
+7 = All of the Above
+8 = Unknown 
+
+
+
+
+Oncology Prostate Cancer Patient Visit – Change “Disease Status” Answer Options
+Req 4
+In the Prostate Cancer Oncology Patient Visit survey branch (Indicator ID 46), delete and add the following answer choices for the question “Disease Status” (no change to question verbiage).
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+
+•	Delete:
+1.	Hormone Sensitive
+2.	Hormone Resistant
+3.	Relapse PSA Only
+4.	Relapse PSA and Organ Involvement
+
+
+•	Add New:
+1.	Castration sensitive / asymptomatic
+2.	Castration sensitive / with symptoms
+3.	Castration resistant / asymptomatic
+4.	Castration resistant / with symptoms
+
+
+ 
+
+•	Values:
+5 = Castration sensitive / asymptomatic
+6 = Castration sensitive / with symptoms
+7 = Castration resistant / asymptomatic
+8 = Castration resistant / with symptoms
+
+
+
+
+Oncology Prostate Cancer Patient Visit – Change “PSA Range” Answer Options
+Req 5
+In the Prostate Cancer Oncology Patient Visit survey branch (Indicator ID 46), delete, keep and add the following answer choices for the question “PSA Range” (no change to question verbiage).
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+
+•	Delete:
+1.	0
+2.	1-5
+3.	6-10
+4.	11-49
+5.	Greater than 50
+
+
+•	Keep: 
+1.	Unknown 
+
+•	Add New:
+1.	0 (Undetectable)
+2.	0.1 – 3.9
+3.	4.0 – 9.9
+4.	10.0 – 19.9
+5.	> 20
+
+ 
+•	Values:
+7 = 0 (Undetectable)
+8 = 0.1 – 3.9
+9 = 4.0 – 9.9
+10 = 10.0 – 19.9
+11 = >= 20
+
+
+
+
+
+								
+								
+
+Oncology Prostate Cancer Patient Visit – Change “Non Drug Treatment” Answer Options
+Req 6
+In the Prostate Cancer Oncology Patient Visit survey branch (Indicator ID 46), delete, keep and add the following answer choices for the question “Non Drug Treatment” (no change to question verbiage).
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+
+•	Delete:
+1.	Transfusion
+2.	Transplant(s)
+3.	Surgery
+
+
+•	Keep: 
+1.	Radiation
+2.	Palliative Care
+3.	Other
+4.	Not Applicable
+
+•	Add New:
+1.	Brachytherapy
+2.	Cryotherapy
+3.	Prostatectomy
+
+ 
+•	Values:
+8 = Brachytherapy
+9 = Cryotherapy
+10 = Prostatectomy
+
+
+								
+								
+
+
+Oncology Prostate Cancer Patient Visit – Add “Androgen Deprivation Therapy (ADT) Status” Question
+Req 7
+In Prostate Cancer Oncology Patient Visit survey branch (Indicator ID 46), add the new question “Androgen Deprivation Therapy (ADT) Status” and insert the new answer choices shown below. 
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory
+•	Select all that apply
+•	Question ID: 10
+•	Pop ID: OncPtADTStatus
+•	PLACEMENT OF QUESTION: Appear after “PSA Range”
+
+ 	 	 
+
+•	Values:
+1 = Has not received ADT
+2 = Received adjuvant ADT and/or neoadjuvant ADT
+3 = Now receiving adjuvant ADT or neoadjuvant ADT
+4 = Received ADT for PSA recurrence or non-metastatic disease
+5 = Now receiving ADT for PSA recurrence or non-metastatic disease
+6 = Received ADT for metastatic or castration-resistant disease
+7 = Now receiving ADT for metastatic or castration-resistant disease
+8 = Unknown
+9 = Other
+
+ 
+
+
+Oncology Prostate Cancer Patient Visit – Add “Has this patient received immunotherapy?” Question
+Req 8
+In Prostate Cancer Oncology Patient Visit survey branch (Indicator ID 46), add the new question “Has this patient received immunotherapy?” 
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory when asked.  Ask when:
+o	“Current Stage” is 
+	“III” OR
+	“IV” 
+o	AND
+o	“Disease status” is:
+	“Castration Resistant / Asymptomatic”, OR 
+	“Castration Resistant / With Symptoms”)
+
+•	Select one answer
+•	Question ID: 8
+•	Pop ID: OncPtImmunotherapy
+•	PLACEMENT OF QUESTION: Appear after “Androgen Deprivation Therapy (ADT) Status”
+
+ 	 
+
+•	Values:
+1 = Yes
+2 = No
+3 = Unknown
+
+
+Oncology Prostate Cancer Patient Visit – Add “Has this patient received cytotoxic chemotherapy?” Question
+Req 9
+In Prostate Cancer Oncology Patient Visit survey branch (Indicator ID 46), add the new question “Has this patient received cytotoxic chemotherapy?” 
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory when asked.  Ask when:
+o	“Current Stage” is 
+	“III” OR
+	“IV” 
+o	AND
+o	“Disease status” is:
+	“Castration Resistant / Asymptomatic”, OR 
+	“Castration Resistant / With Symptoms”)
+
+•	Select one answer
+•	Question ID: 9
+•	Pop ID: OncPtCytotoxicChemo
+•	PLACEMENT OF QUESTION: Appear after “Has this patient received immunotherapy?”
+
+ 	 
+
+•	Values:
+1 = Yes
+2 = No
+3 = Unknown
+
+
+Oncology Prostate Cancer Patient Visit – Add “Therapy Status” Question
+Req 10
+In Prostate Cancer Oncology Patient Visit survey branch (Indicator ID 46), add the new question “Therapy Status” 
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory when asked.  Ask when:
+o	 “Disease status” is:
+	“Castration Sensitive / Asymptomatic”, OR 
+	“Castration Sensitive / With Symptoms”)
+o	OR
+	“Disease status” is:
+•	“Castration Resistant / Asymptomatic”, OR 
+•	“Castration Resistant / With Symptoms”)
+	AND 
+	“Current Stage” is NOT
+•	III OR
+•	IV
+•	Select one answer
+•	Question ID: 8
+•	Pop ID: OncPtTherapyStatus
+•	PLACEMENT OF QUESTION: Appear in RX flow after product form strength.
+
+ 		 
+
+•	Values:
+1 = Neoadjuvant
+2 = Adjuvant
+3 = PSA Recurrence (Non-Metastatic Disease or Castration Sensitive Disease)
+4 = Other
+
+ 
+
+Oncology Prostate Cancer Patient Visit – Change “Line of Therapy” Answer Options
+Req 11
+In Prostate Cancer Oncology Patient Visit survey branch (Indicator ID 46), change “Line of Therapy” answer options and change triggering conditions
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory when asked.  Ask when:
+o	“Disease status” is:
+	“Castration Resistant / Asymptomatic”, OR 
+	“Castration Resistant / With Symptoms”)
+o	AND
+o	“Current Stage” is
+	III OR
+	IV
+
+•	Delete:
+1.	1st Line
+2.	2nd Line
+3.	3rd Line
+4.	4th Line
+
+•	Keep: 
+1.	Maintenance
+•	Add New:
+1.	1st Line Castration Resistant Prostate Cancer
+2.	2nd Line Castration Resistant Prostate Cancer
+3.	3rd Line Castration Resistant Prostate Cancer
+4.	4th Line Castration Resistant Prostate Cancer or Greater
+
+		
+ 
+ 
+
+•	 Values:
+8= 1st Line Castration Resistant Prostate Cancer
+9 = 2nd Line Castration Resistant Prostate Cancer
+10 = 3rd Line Castration Resistant Prostate Cancer
+11 = 4th Line Castration Resistant Prostate Cancer or Greater
+
+
+
+
+
+
+
+Oncology Prostate Cancer Patient Visit – Add “How did you primarily define disease progression for this patient?” Question
+Req 13
+In Prostate Cancer Oncology Patient Visit survey branch (Indicator ID 46), add the new question “How did you primarily define disease progression for this patient?” 
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory when asked.  Ask when:
+o	Current Stage: Answer choice can be either “I” or “IIA” or “IIB” or “III”  “PSA (Biochemical) Recurrence Only” or “IV”, AND
+o	Disease Status: Answer can be either “Castration sensitive / asymptomatic” or “Castration sensitive / with symptoms” or “Castration resistant / asymptomatic” or “Castration resistant / with symptoms”, AND
+o	Patient Currently Under Drug Treatment (user must select “No”), AND
+o	Was a decision made discontinue treatment this calendar month for this patient? (User must select “Yes”), AND
+o	Primary Reason for Recent Discontinuation (user must select “Disease Progression”)
+•	Select one answer
+•	Question ID: 18
+•	Pop ID: OncPtDiseaseProgression
+•	PLACEMENT OF QUESTION: After “Primary Reason for Recent Discontinuation”
+
+ 	 
+
+•	Values:
+1 = Clinical Symptoms (e.g., bone pain)
+2 = Radiographic evidence of disease progression
+3 = PSA progression
+4 = Other
+
+
+
+Oncology Prostate Cancer Patient Visit – Add “How did you primarily define disease progression for this patient?” Question
+Req 49
+In Prostate Cancer Oncology Patient Visit survey branch (Indicator ID 46), add the new question “How did you primarily define disease progression for this patient?” 
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory when asked.  Ask when:
+o	Current Stage: Answer choice can be either “I” or “IIA” or “IIB” or “III” or “PSA (Biochemical) Recurrence Only” or “IV”, AND
+o	Disease Status: Answer can be either “Castration sensitive / asymptomatic” or “Castration sensitive / with symptoms” or “Castration resistant / asymptomatic” or “Castration resistant / with symptoms”, AND
+o	Patient Currently Under Drug Treatment (user must select “Yes”), AND
+o	In this calendar month, was a decision made to discontinue the treatment/regimen for this patient? (user must select “Yes”), AND
+o	Primary Reason for Recent Change.   User must select “Disease Progression”)
+•	Select one answer
+•	Question ID: 17
+•	Pop ID: OncPtDiseaseProgression
+•	PLACEMENT OF QUESTION: After “Primary Reason for Recent Change”
+
+ 	 	 
+
+ 
+
+•	Values:
+1 = Clinical Symptoms (e.g., bone pain)
+2 = Radiographic evidence of disease progression
+3 = PSA progression
+4 = Other
+
+
+
+
+
+
+ 
+
+Oncology Prostate Cancer Patient Visit – Add “How did you primarily define disease progression for this patient?” Question
+Req 50
+In Prostate Cancer Oncology Patient Visit survey branch (Indicator ID 46), add the new question “How did you primarily define disease progression for this patient?” 
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory when asked.  Ask when:
+o	Current Stage: Answer choice must be either “III” or “IV”, AND
+o	Disease Status: Answer choice must be either “Castration resistant / asymptomatic” or “Castration resistant / with symptoms”, AND
+o	Patient Currently Under Drug Treatment (user must select “Yes”), AND
+o	Patient must be 2nd Line Castration Resistant Prostate Cancer or Higher
+o	In this calendar month, was a decision made to discontinue the treatment/regimen for this patient? (user must select “No”), AND
+o	Primary Reason for Changing from This [insert Line of Therapy] tx Regimen.   User must select “Disease Progression”)
+•	Select one answer
+•	Question ID: 19
+•	Pop ID: OncPtDiseaseProgression
+•	PLACEMENT OF QUESTION: After “Primary Reason for changing from Recent Discontinuation”
+
+ 	 	 
+
+ 
+
+•	Values:
+1 = Clinical Symptoms (e.g., bone pain)
+2 = Radiographic evidence of disease progression
+3 = PSA progression
+4 = Other
+
+ 
+Oncology CML Cancer Patient Visit – Add “Philadelphia Chromosome Status” Question
+Req 45
+In the CML Oncology Patient Visit survey branch (Indicator ID 47), add the new question “Philadelphia Chromosome Status”
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory 
+•	Select one answer
+•	Question ID: 7
+•	Pop ID: OncPtPhilaChromStage
+•	PLACEMENT OF QUESTION: After “Newly or Previously Diagnosed”
+
+
+	 		 
+
+•	Values:
+1 = Ph+
+2 = Ph–
+3 = Unknown
+
+
+
+
+
+
+
+
+o	Ask the following questions for all patient visits for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+------------------------------------------------------------------------------------------------------------
+4.
+GIST Diagnosis
+	 
+	Modify Stage at Diagnosis choices to be:
+•	Resectable
+•	Marginally resectable
+•	Unresectable
+•	Metastatic
+•	Unknown
+	 
+	Modify Disease Status choices to remove “treated” & “untreated”: 
+•	Diagnosed, but not treated (lot)
+•	Initial Treatment (lot)
+•	Maintenance Treatment (lot)
+•	Remission (lot)
+•	Relapse (lot)
+•	Unknown (lot)
+
+Rx Screen relationship to LINE OF THERAPY FOR GIST:
+Only ask if Line of Therapy based on the choice within “disease status”.  Those trigger choices are marked w/ (*LOT*).  When any of these Disease Status choices are selected, then Line of Therapy should appear on Screen #4 and choices should include:
+
+•	1st
+•	2nd line
+•	3rd Line
+•	4th Line
+•	5th Line or greater
+
+	Resection Completed?
+•	 
+•	 Yes
+•	Not yet, but planned
+•	No
+•	Unknown
+
+	Remove ECOG Performance Status:
+
+ 
+
+	PET Scan Completed? (add this as new field)
+•	 
+•	Yes – baseline only
+•	Yes – baseline & follow-up
+•	No PETs completed
+•	Unknown
+
+o	 
+
+
+	C-Kit test result? 
+•	  
+•	Positive
+•	Negative
+•	No test
+•	Unknown
+
+
+
+
+
+	Add GIST question – 3.0
+•	Ask “Risk of recurrence:” Low, Intermediate, High, Unknown
+o	Given that there is real estate for boxes, use boxes rather than drop downs to reduce the effort by 1 click.
+•	 
+
+
+New question for current GIST treatment branch:
+-	Current Metastatic     Y    N
+Question should be after Disease Status
+Required Field
+ 
+
+o	Ask the following questions for all patient visits for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+----------------------------------------------------------------------------
+5.
+MDS (Myelodysplastic Syndrome) Diagnosis
+	 
+	Stage at diagnosis (IPSS Categorization):
+•	 
+•	Low risk
+•	Intermediate – 1
+•	Intermediate – 2
+•	High Risk
+•	Unknown
+
+	Disease Status:
+•	 
+o	Modify Disease Status to remove “untreated” definitions.  Revised list will include:
+	Diagnosed, but not treated
+	Initial treatment
+	Maintenance Treatment
+	Remission (lot)
+	Relapse (lot)
+Unknown
+
+Rx Screen relationship to LINE OF THERAPY FOR MDS:
+Only ask if Line of Therapy if “disease status” choice is marked w/ (*LOT*).  Line of Therapy choices should then include:
+•	2nd Line
+•	3rd Line
+•	4th Line or greater
+•	Maintenance
+o	
+o	
+Modify “Does pt have 5Q- Syndrome” to “Does pt have deletion 5Q cytogenetic abnormalities?” Yes/No/Unknown  
+
+•	Modify choice list for transfusion status to be:
+-	Never had transfusion – independent
+-	Had transfusion(s) prior –indpndnt now
+-	Transfusion dependent
+-	Unknown
+	 
+
+
+
+New question for MDS treatment branch
+Blast Counts:
+Drop down options
+<5%
+5% - 20%
+21% - 30%
+>30%
+No Test 
+Unknown 
+Question should be after Disease Status
+Required Field
+ 
+
+
+o	Ask the following questions for all patient visits that are not first line for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+
+-----------------------------------------------------------------------------------------------------
+6.
+
+Leukemia Diagnosis: (this branch already exists, these are modifications)
+•	 
+•	Stage at diagnosis:  
+o	 
+o	I
+o	II
+o	III
+o	IV
+o	Unknown
+o	N/A
+•	Disease Status:
+o	 
+o	Diagnosed, but not treated
+o	Induction Therapy
+o	Consolidation Therapy
+o	Partial Remission
+o	Complete Remission
+o	Post remission
+o	Surveillance
+o	Salvage
+o	Unknown
+•	ECOG Performance Status
+o	 
+o	0
+o	1
+o	2
+o	3
+o	4
+o	Unknown
+
+
+
+Ask “Line of Therapy” for Leukemia Diagnosis.  The following line of therapy selections would apply:1st Line, 2nd Line, 3rd Line 4th Line, 5th Line or Greater
+ 
+
+o	Ask the following questions for all patient visits that are not first line for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+-------------------------------------------------------------------------------------------------------
+7.
+
+For All Non-Hodgkin’s Lymphoma Diagnoses***: (lymphomas NEC) Liquid tumor
+
+Newly, previously diagnosed 
+o	
+	Stage at diagnosis (0, I, II, III, IV, Unknown, N/A)
+Change Disease Status drop down options to:
+
+ 	Active
+ 	Remission
+      			Relapsed
+     			 Refractory
+     			 Unknown
+
+ 
+	ECOG Performance Status (0, 1, 2, 3, 4, Unknown)
+	Grade (Indolent, Aggressive, Other, N/A)
+
+•	IPI: (Low Risk, Low/Intermediate Risk, Intermediate/High Risk, High Risk, Unknown, N/A) DELETED 
+
+•	FLIPI: (Good (0-1), Intermediate (2), Poor (>3), Unknown, N/A)
+For current Liquid Tumor/Lymphoma, add new  question
+
+Treatment Type: 
+Drop down options
+
+Watch and wait
+Best supportive care only
+Systemic therapy +/- other therapy
+      Stem Cell Transplant
+      Follow-up (pts in between lines of therapy)
+      Unknown
+
+Question should be after Grade
+
+
+
+
+
+
+For current Liquid Tumor/Lymphoma branch, when “Systemic therapy +/- other therapy” is chosen  (statement 28) branch new question
+Treatment Status 
+Drop down options:
+
+Induction
+Consolidation
+Maintenance
+Unknown
+
+Required Field
+
+Ask “Line of Therapy” for Lymphoma Diagnoses.  The following line of therapy selections would apply:1st Line, 2nd Line, 3rd Line 4th Line, 5th Line or Greater
+ 
+
+
+
+
+o	Ask the following questions for all patient visits that are not first line for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+
+-------------------------------------------------------------------------------------------------------
+8
+
+o	For Solid Tumor Diagnoses: Breast Cancer
+o	Current Site Removed in Onc 3.0
+
+removed
+	Current Site (Local, Local-Recurrent, Regional, Regional-Recurrent, Distant/Metastatic, Unknown)
+	Stage at diagnosis (0, I, IIA, IIB, IIIA, IIIB, IIIC, IV, Unknown, N/A)
+	Disease Status***:
+•	Neo-Adjuvant
+•	Adjuvant
+•	Extended Adjuvant
+•	Metastatic
+o	If Metastatic, then ask “Location of Metastases” (select one):
+Where “Location of Metastases” exists in most branches, add additional choice of “Skin”:
+
+ 
+
+Add “Skin” as choice after “Other Visceral” in the list (still keep as select multiple, unless “All of the above” or “unknown” are selected.
+	
+•	No evidence of disease (NED)
+
+•	***  If “Neo-adjuvant, Adjuvant, Extended Adjuvant
+ or NED selected, do NOT ask “Line of Therapy” on Rx Screen #4
+ 
+
+	ECOG Performance Status (0, 1, 2, 3, 4, Unknown)
+
+•	For Breast Cancer Diags only:
+o	ER/PR: (No Test, Positive, Negative, Unknown)
+o	HER2 tests
+	IHC (0, 1+, 2+, 3+, Unknown, No Test)
+	FISH (Positive, Negative, Unknown, No Test)
+
+	Add Breast question
+•	Ask “menopausal status” Pre, Peri, Post, Unknown
+o	Note: will utilize the space by removing “current site” question.
+o	Note: only ask for females.
+
+o	Ask the following questions for all patient visits that are not first line for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+------------------------------------------------------------------------------------------------------
+9
+
+
+Chronic Myeloid Leukemia (CML) Diagnosis -
+
+ 
+•	Newly Diagnosed/Prev Diagnosed
+•	Stage at diagnosis:  
+ 
+o	Chronic
+o	Accelerated
+o	Blast
+o	Unknown
+
+
+•	Disease Status: new choices
+•	In the CML Oncology Patient Visit survey branch (Indicator ID 47), delete, keep and add the following answer choices for the question Disease Status (no change to question verbiage):
+
+Delete:
+Partial Hematological Response
+Partial Molecular Response
+
+Keep: 
+Complete Hematologic Response  (please note spelling change – not a new field)
+Partial Cytogenetic Response  (please note spelling change – not a new field)
+Complete Cytogenetic Response  (please note spelling change – not a new field)
+Complete Molecular Response
+No Response
+Unknown 
+
+Add New:
+Less than Complete Hematologic Response
+Less than Partial Cytogenetic Response
+Less than Major Molecular Response
+Major Molecular Response
+
+Answer choices should display in the order shown in the below right screenshot.  
+
+LOT behavior will continue to be asked regardless of Disease Status selection.  User can select one or more option, except for when selecting No Response or Unknown.  No Response or Unknown should de-select selected answer choices.
+
+ 
+
+•	Bone Marrow Transplant?
+ 
+o	Yes
+o	No
+o	Unknown
+
+•	Goal of therapy for this patient: (same list as disease status choices)
+
+1.	In the CML Oncology Patient Visit survey branch (Indicator ID 47), delete, keep and add the following answer choices for the question Goal of Therapy (no change to question verbiage):
+
+Delete:
+Partial Hematological Response
+Partial Cytogenic Response
+Partial Molecular Response
+Complete Molecular Response (PLEASE NOTE: DO NOT DELETE)
+No Response
+
+Keep: 
+Complete Hematologic Response  (please note spelling change – not a new field)
+Complete Cytogenetic Response  (please note spelling change – not a new field)
+Complete Molecular Response
+Unknown
+
+Add New:
+Major Molecular Response
+Palliation
+
+Answer choices should display in the order shown in the below right screenshot.  User can only select one option.
+
+ 
+
+Mutational Status:
+Drop down options
+T3151 BCR/ABL mutation
+Other BCR/ABL mutation
+No BCR/ABL mutation
+No Test 
+Unknown 
+Question should be after Disease Status
+Required Field
+ 
+
+Ask “Line of Therapy” for CML.  The following line of therapy selections would apply:1st Line, 2nd Line, 3rd Line 4th Line, 5th Line or Greater
+
+ 
+
+o	Ask the following questions for all patient visits that are not first line for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+----------------------------------------------------------------------------------------------------------
+10
+
+Add a “EGFR SmokerStatus” Logic Branch: SCLC
+
+•	Base this branch on the existing EGFR branch with the exact same categories/choices:  
+ 
+•	Add drop down to indicate the patient’s smoking status.  Selections should be:
+Smoker Status? (select one)
+o	Never smoked
+o	Ex-smoker (>1 year)
+o	Current smoker
+o	Unknown
+
+
+Initial Stage :
+0, I, IIa, IIb, IIIa, IIIb, IIIc, IV, Unknown, N/A 
+
+Site is removed in Onc 3.0
+Site:
+•	 “Local”, “Local-Recurrent”, “Regional”, “Regional-Recurrent”, Distant/Metastatic”, “Unknown”
+Disease Status:  
+Neo-Adjuvant, Adjuvant, Metastatic, No evidence of disease (NED)
+ECOG Performance Status
+•	0,1,2,3,4, Unknown
+If Disease Status  - Metastatic collect Location of Metastasis 
+and LOT 
+
+ 
+
+
+EGFR: No test, Positive, Negative, Unknown
+
+
+o	Ask the following questions for all patient visits all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+
+
+-----------------------------------------------------------------------------------------------------
+11
+
+Add a NSCL (Non Small Cell Lung) Cancer Logic Branch
+Same as above “EGFR SmokerStatus” based on EGFR branching: 
+
+
+ 
+
+Initial Stage :
+0, I, IIa, IIb, IIIa, IIIb, IV, Unknown, N/A 
+
+10/10/11. Delete Stage “IIIC” from Stage at diagnosis question within the NSCLC branch (Indicator ID 51):
+
+Site is removed in Onc 3.0
+Site:
+•	 “Local”, “Local-Recurrent”, “Regional”, “Regional-Recurrent”, Distant/Metastatic”, “Unknown”
+Disease Status:  
+Neo-Adjuvant, Adjuvant, Metastatic, No evidence of disease (NED)
+ECOG Performance Status
+•	0,1,2,3,4, Unknown
+If Disease Status  - Metastatic collect Location of Metastasis 
+and LOT 
+
+
+EGFR – No Test, Positive, Negative, Unknown
+
+
+
+•	Add ALK and KRAS Biomarkers to NSCLC Branch in Oncology software.
+•	ALK is NOT an existing field.  KRAS is an existing field in CRC. positive
+•	KRAS question is trigger if Stage at Diagnosis = IV and/or If Disease Status is Metastic. No test
+
+ 
+•	Add Smoker Status with same selections:
+Smoker Status? (select one)
+o	Never smoked
+o	Ex-smoker (>1 year)
+o	Current smoker
+o	Unknown
+•	Add new question for this logic branch.  New question will be asked (NOTE: we know we will have to work on reducing/abbreviating the choices below)
+Tumor Histology? (select one)
+
+
+                      Adenocarcinoma w/ mixed subtypes
+
+-          Adenocarcinoma: bronchiolo-alveolar
+
+-          Large cell carcinoma
+
+-          Squamous cell carcinoma
+
+-          Not Otherwise Specified (NOS)
+
+-          Unknown
+
+•	Add new question:
+o	Centrally located tumor? (select one)
+	Yes
+	No
+	Unknown
+	
+	
+Add NSCL question
+•	“PT have pleural effusions?” Y/N/Unknown
+o	Use boxes if there is space (e.g. Y/N/Unk)
+
+
+ 
+
+
+
+
+o	Ask the following questions for all patient visits for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+------------------------------------------------------------------------------------------------------------
+12
+
+EGFR 
+
+
+<Diag Indicator = Other Cancer>
+Newly/Prev Diagnosed
+Stage
+Site
+Disease Status
+ECOG performance Status
+
+Initial Stage :
+0, I, IIa, IIb, IIIa, IIIb, IIIc, IV, Unknown, N/A 
+
+Site is removed in Onc 3.0
+Site:
+•	 “Local”, “Local-Recurrent”, “Regional”, “Regional-Recurrent”, Distant/Metastatic”, “Unknown”
+Disease Status:  
+Neo-Adjuvant, Adjuvant, Metastatic, No evidence of disease (NED)
+If Disease Status  - Metastatic collect Location of Metastasis 
+and LOT 
+
+
+ECOG Performance Status
+•	0,1,2,3,4, Unknown
+
+EGFR – No Test, Positive, Negative, Unknown
+ 
+
+
+
+
+o	Ask the following questions for all patient visits that are not first line for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+-----------------------------------------------------------------------------------------------------
+13
+
+Other Cancer
+
+
+<Diag Indicator = Other Cancer>
+Newly/Prev Diagnosed
+Stage
+Site
+Disease Status
+ECOG performance Status
+
+Initial Stage :
+0, I, IIa, IIb, IIIa, IIIb, IIIc, IV, Unknown, N/A 
+
+
+Site Removed in Onc 3.0
+Site:
+•	 “Local”, “Local-Recurrent”, “Regional”, “Regional-Recurrent”, Distant/Metastatic”, “Unknown”
+Disease Status:  
+Neo-Adjuvant, Adjuvant, Metastatic, No evidence of disease (NED)
+ECOG Performance Status
+•	0,1,2,3,4, Unknown
+
+If Disease Status  - Metastatic collect Location of Metastasis 
+and LOT 
+
+ 
+
+
+
+o	Ask the following questions for all patient visits that are not first line for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+-----------------------------------------------------------------------------------------------------
+14
+
+Add CLL Logic Branch
+
+•	Questions will be the same as the revised Liquid Tumor/Lymphoma logic branch (38) but with the following changes.  Try to use boxes (which will minimize clicks for the doc)
+o	IPI and FLIPI would not be asked
+For current CLL treatment branch, change Treatment Type drop down options to:
+
+Watch and wait
+Best supportive care only
+Systemic therapy +/- other therapy
+      Stem Cell Transplant
+      Follow-up (pts in between lines of therapy)
+      Unknown
+
+Required Field
+
+For current CLL treatment branch, when “Systemic therapy +/- other therapy” is chosen  (statement 30) branch new question
+
+Treatment Status 
+Drop down options:
+
+Induction
+Consolidation
+Maintenance
+Unknown
+
+
+Required Field
+
+o	Required Field Ask 17p deletion? “Deleted/Normal/Unknown”
+Line of therapy should be “1st Line, 2nd Line, 3rd Line, 4th Line, 5th Line or Greater
+
+
+	Stage at diagnosis (0, I, II, III, IV, Unknown, N/A)
+For current CLL treatment branch, change Disease Status drop down options to:
+
+Active
+     Remission
+      			Relapsed
+     			 Refractory
+     			 Unknown
+
+ 
+
+	Required Field ECOG Performance Status (0, 1, 2, 3, 4, Unknown)
+	Grade (Indolent, Aggressive, Other, N/A)
+
+
+o	Ask the following questions for all patient visits that are not first line for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+ 
+
+
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------
+
+15
+
+
+
+ Add ITP Logic Branch
+
+			Newly previously diagnosed
+•	V. 1.6: Ask “Type:” Acute (<6 months since dx), Chronic (>6 months since dx), De Novo, Unknown
+•	Ask “Line of Therapy:” 1st Line, 2nd Line, 3rd Line, 4th Line, 5th Line or Greater
+•	Ask “Current Platelet Level:” below 20,000, 20,000 to 29,999, 30,000 to 49,999, 50,000 to 74,999, 75,000 +, Unknown
+•	In ITP Oncology Patient Visit survey branch (Indicator ID 57), delete the Had splenectomy question.
+
+“Not asked” record result will be the value that should pipe through after the bundle release.
+•	
+•	V. 1.6: add new question: Goal of Therapy: “Inc platelet-prep PT for surgery”, “Inc platelet-prevent bleeding”, “Inc platelet-relieve ITP symptoms”, “Reduce/Taper off corticosteroids”, and “Other”
+
+2.	In ITP Oncology Patient Visit survey branch (Indicator ID 57), add the following question and answer choices:
+
+Question:
+Splenectomy status at this visit
+
+Answer choices:
+Patient already had a splenectomy
+Will refer patient for a splenectomy at this visit
+Will not refer patient for a splenectomy at this visit
+Patient not a splenectomy candidate
+Unknown
+
+Answer choices should display in the order shown in the below left screenshot.   User can only select one option.  
+
+Question should appear after Current Platelet Level as show in the below right screenshot (where Had splenectomy used to be). 
+
+ 
+
+
+
+
+
+Oncology ITP Patient Visit – Delete “Non Drug Treatment” Question
+In ITP Oncology Patient Visit survey branch (Indicator ID 57), delete the “Non Drug Treatment” question.
+iPhone
+Change applies to: xml.
+
+•	Set <survey_response_version> = 6.6
+
+
+
+
+
+
+
+o	Ask the following questions for all patient visits that are not first line for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+ 
+
+
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+------------------------------------------------------------------------------------------------------------
+16
+
+Add new CRC treatment branch.
+For CRC branch, keep in EGFR branch (ID36/EGFR Status) questions “Stage at diagnosis”, “Disease Status”, “ECOG Performance Status” 
+Delete “EGFR” question for CRC branch
+Keep location of metastases branch.
+
+Newly/Prev Diagnosed
+Stage
+Disease Status
+ECOG performance Status
+
+Initial Stage :
+0, I, IIa, IIb, IIIa, IIIb, IIIc, IV, Unknown, N/A 
+
+Disease Status:  
+Neo-Adjuvant, Adjuvant, Metastatic, No evidence of disease (NED)
+If Disease Status  - Metastatic collect Location of Metastasis 
+and LOT 
+
+
+ECOG Performance Status
+•	0,1,2,3,4, Unknown
+
+
+Question for CRC treatment branch when IV is chosen under “Stage at diagnosis” and/or  metastatic is chosen under “Disease Status”
+KRAS:
+Drop down options
+Positive (mutant)
+Negative (wild type)
+No Test 
+Unknown 
+Question should be after ECOG
+Required Field
+ 
+
+
+In CRC branch (Indicator ID 66), if Disease Status is Metastatic, ask BRAF Mutation:
+BRAF Mutation
+
+
+select BRAF mutation	Mutated
+Not Mutated
+No Test
+Unknown
+
+PLACEMENT OF QUESTION: Appear after KRAS (and KRAS timing if applicable  see Req. 14)
+
+ 
+Only one answer allowed
+
+In CRC branch (Indicator ID 66), if Stage at Diagnosis is IV and/or if Disease Status is Metastatic, KRAS question is asked.  If KRAS answer is Positive or Negative, ask KRAS Timing:
+
+Please indicate timing of KRAS testing
+
+
+
+select timing	Patient Tested at Initial mCRC Diagnosis
+Patient Tested While on 1st Line Therapy
+Patient Tested After Progressing on 1st Line Therapy
+Patient Tested While on 2nd Line or Greater Therapy
+Other
+Unknown
+
+PLACEMENT OF QUESTION: Appear after KRAS
+
+ 
+Only one answer allowed
+
+
+
+
+
+
+3.	In the CRC Oncology Patient Visit survey branch (Indicator ID 66), delete, keep and add the following answer choices for the question Please indicate timing of KRAS testing (no change to question verbiage):
+
+Delete:
+Patient Tested at Initial mCRC Diagnosis
+Patient Tested While on 2nd Line or Greater Therapy
+
+Keep: 
+Patient Tested While on 1st Line Therapy
+Patient Tested After Progressing on 1st Line Therapy
+Other
+Unknown 
+
+Add New:
+Patient Tested Prior to 1st Line Therapy Decision
+Patient Tested While on 2nd Line Therapy
+Patient Tested After Progressing on 2nd Line Therapy
+Patient Tested While on 3rd Line or Greater Therapy
+
+Answer choices should display in the order shown in the below right screenshot.  User can only select one option.
+
+Please indicate timing of KRAS testing triggers off of answer choices Positive (Mutant) or Negative (Wild Type) in KRAS question, which triggers off of Stage at Diagnosis IV and/or Disease Status Metastatic.
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+o	Ask the following questions for all patient visits that are not first line for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+------------------------------------------------------------------------------------------------------------
+17
+
+Add new Head/Neck treatment branch.
+For new Head/Neck branch, keep in EGFR branch (ID36/EGFR Status) question “Stage at diagnosis”, “Disease Status”, “ECOG Performance Status”  and “EGFR”
+Keep location of metastases branch.
+
+Newly/Prev Diagnosed
+Stage
+Current Site
+Disease Status
+ECOG performance Status
+
+Initial Stage :
+4.	In the Head and Neck Oncology Patient Visit survey branch (Indicator ID 67), delete, keep and add the following answer choices for the question Stage at Diagnosis (no change to question verbiage):
+
+Delete:
+IIA
+IIB
+IIIA
+IIIB
+IIIC
+IV
+
+Keep: 
+0
+I
+Unknown 
+Not Applicable
+
+Add New:
+II
+III
+IVA
+IVB
+IVC
+
+Answer choices should display in the order shown in the below right screenshot.  User can only select one option.
+
+ 
+
+Disease Status:  
+Neo-Adjuvant, Adjuvant, Metastatic, No evidence of disease (NED)
+ECOG Performance Status
+•	0,1,2,3,4, Unknown
+
+EGFR – No Test, Positive, Negative, Unknown
+
+
+If Disease Status  - Metastatic collect Location of Metastasis 
+and LOT 
+
+
+
+
+For new Head/Neck branch, add new question:
+
+Current Site:
+
+5.	In the Head and Neck Oncology Patient Visit survey branch (Indicator ID 67), delete, keep and add the following answer choices for the question Current Site (no change to question verbiage):
+
+Delete:
+Local
+Local-Recurrent
+Regional
+Regional-Recurrent
+Distant/Metastatic
+
+Keep: 
+Unknown 
+
+Add New:
+Localized
+Locally or Regionally Advanced
+Recurrent
+Metastatic
+
+Answer choices should display in the order shown in the below right screenshot.  User can only select one option.
+
+ 
+Question should be after EGFR
+Required Field
+
+ 
+
+For new Head/Neck branch, add new question:
+
+Smoker Status:
+
+Drop down options
+
+Never smoked 
+Ex-smoker (>1year)
+Current Smoker
+      Unknown
+Question should be after Current Site
+Required Field
+
+ 
+
+In Head & Neck branch (Indicator ID 67), ask HPV Status:
+
+HPV (Human Papilloma Virus) Status
+
+
+select status	Positive
+Negative
+Not Tested
+Unknown
+
+PLACEMENT OF QUESTION: Appear after Smoker Status
+
+Please note that question is not dependent on any other question selection within the H&N branch
+
+
+ 
+Only one answer allowed
+
+ 
+
+o	Ask the following questions for all patient visits that are not first line for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+
+
+-----------------------------------------------------------------------------------------------------
+18
+
+Liver Cancer
+Add new Liver treatment branch.
+For new Liver branch, keep in current cancer other (ID37/Cancer Other) questions “Stage at diagnosis”, “Disease Status”, and “ECOG Performance Status”  
+Required Field
+Keep location of metastases branch
+
+<Diag Indicator = Other Cancer>
+Newly/Prev Diagnosed
+Stage
+Site
+Disease Status
+ECOG performance Status
+
+Initial Stage :
+0, I, IIa, IIb, IIIa, IIIb, IIIc, IV, Unknown, N/A 
+
+
+Site Removed in Onc 3.0
+Site:
+•	 “Local”, “Local-Recurrent”, “Regional”, “Regional-Recurrent”, Distant/Metastatic”, “Unknown”
+Disease Status:  
+Neo-Adjuvant, Adjuvant, Metastatic, No evidence of disease (NED)
+ECOG Performance Status
+•	0,1,2,3,4, Unknown
+
+If Disease Status  - Metastatic collect Location of Metastasis 
+and LOT 
+
+ 
+
+
+
+For new Liver branch, add new question:
+
+Child-Pugh Status:
+
+Drop down options
+
+A
+B
+C
+      Unknown
+Question should be after ECOG
+Required Field
+
+
+ 
+
+For new Liver branch, add new question:
+
+Resectability:
+
+Drop down options
+
+Yes
+No
+      Unknown
+Question should be after Child-Pugh
+Required Field
+
+ 
+
+
+For new Liver branch, add new question:
+
+Transplant Completed:
+
+Drop down options
+
+Yes
+No
+      Unknown
+Question should be after Resectability
+Required Field
+
+ 
+
+
+o	Ask the following questions for all patient visits that are not first line for all logic branches.  This is not an optional field and will be on the Rx 1 screen
+	Form/Strength
+	Line of therapy. 
+	“How long has the PT been on the current treatment/regimen”
+•	This week
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+	“Intended duration of treatment since initiation of this treatment/regimen”
+•	>1 week <=2 weeks
+•	>2 weeks <=3 weeks
+•	>3 weeks <=1 month
+•	>1 month <=3 months
+•	>3 months <=6 months
+•	>6 months <=9 months
+•	>9 months <=12 months
+•	>12 months <=18 months
+•	>18 months <=24 months
+•	>2 years
+•	Unknown
+•	Treat to progression
+
+¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬¬
+
+--------------------------------------------------------------------------------------------------------------------------------
+19 Gastric Oncology Branch 
+
+REQ 4 –
+Create new Gastric Oncology Branch 
+	•	Gastric branch dependency is ICD9 151.
+•	The following questions are to be asked all the time:
+o	Q.  Newly or Previously Diagnosed
+      A.  Newly or Previously
+o	Q.  Stage at Diagnosis
+                  A.  0
+IA
+IB
+                       IIA
+                       IIB
+                       IIIA   
+                       IIIB
+                       IIIC
+                       IV
+                       Unknown
+                       N/A
+o	Q.  Disease Status
+                  A.  Neo-Adjuvant
+                       Adjuvant
+                       Metastatic
+                       No Evidence of Disease (NED)
+            If disease status equal Metastatic then 
+                  Q.  Location of Metastases
+                       Checkboxes
+                   A.  Bone
+                        Brain
+                        Lung
+                        Liver
+                        Other Visceral
+                        Skin
+                        All of the Above
+                        Unknown
+
+o	Q.  ECOG Test Result
+       A.  0
+                       1
+                       2
+                       3
+                       4
+                       Unknown
+
+o	Q.  IHC Test Result
+             A.  No test
+      0
+      1+
+      2+
+      3+
+      Unknown
+
+o	Q.  Fish Test Result
+            A.  No test
+      Positive
+      Negative
+      Unknown 
+
+
+When Disease Status is Metastatic for GASTRIC Cancer then collect the LOT responses: 
+1st Line 
+2nd Line
+3rd Line
+4th Line or Greater
+Maintenance
+ 
+
+
+
+
+------------------------------------------------------------------------------------------------------------20 Melanoma branch
+
+
+
+
+
+
+
+6.	Add Melanoma ICD 9 Indicator in PLUM.  Ping the following ICD 9’s to the newly created Melanoma ICD 9 indicator:
+Diagnosis ID	ICD9 Code
+8813	172
+8700	172
+8698	172.1
+8697	172.2
+8458	172.3
+8459	172.4
+8703	172.5
+8696	172.6
+8699	172.7
+8701	172.8
+8702	172.9
+15722	172A
+
+
+7.	Melanoma ICD 9 indicator should override Cancer Other ICD 9 Indicator (37).
+8.	Melanoma branch Q1: Newly or Previously Diagnosed (use same logic as used in all other treatment branches)
+
+PLACEMENT OF QUESTION: 1st Question in Diagnosis Details section
+
+ 
+Only one answer allowed
+
+9.	Melanoma branch Q2: Stage at Diagnosis
+
+Stage at Diagnosis
+
+
+
+
+
+
+
+
+
+
+select stage	0
+IA
+IB
+IIA
+IIB
+IIC
+IIIA
+IIIB
+IIIC
+IV
+Unknown
+N/A
+
+PLACEMENT OF QUESTION: Appear under Newly or Previously Diagnosed
+
+ 
+Only one answer allowed
+
+10.	Melanoma branch Q3: Disease Status
+
+Disease Status
+
+
+select status	Neo-Adjuvant
+Adjuvant
+Metastatic
+No Evidence of Disease (NED)
+
+PLACEMENT OF QUESTION: Appear under Stage at Diagnosis
+
+ 
+Only one answer allowed
+
+11.	Melanoma branch Q4: ECOG Performance Status (use same logic as used in all other treatment branches that use the same question)
+
+ECOG Test Results
+
+
+
+
+select ECOG status	0
+1
+2
+3
+4
+Unknown
+
+PLACEMENT OF QUESTION: Appear under Disease Status
+
+ 
+Only one answer allowed
+
+12.	Melanoma branch Q5: If Disease Status is Metastatic, ask location of Metastases (use same logic as used in all other Oncology treatment branches)
+
+PLACEMENT OF QUESTION: Appear between Disease Status and ECOG Performance Status if Disease Status = Metastatic.  Answer choices are the same as in other branches.
+
+ 
+Multiple answers allowed unless Unknown or All of the Above is chosen.
+
+13.	Melanoma branch Q6: If Disease Status is Metastatic, ask BRAF Mutation
+
+BRAF Mutation
+
+
+select BRAF mutation	No Test
+Positive
+Negative
+Unknown
+
+PLACEMENT OF QUESTION: Appear after ECOG Performance Status
+
+ 
+Only one answer allowed
+
+14.	Melanoma branch Q7: If Disease Status is Metastatic, ask C-kit Test Result
+
+C-kit Test Result
+
+
+select status	No Test
+Positive
+Negative
+Unknown
+
+PLACEMENT OF QUESTION: Appear after BRAF Mutation
+
+ 
+Only one answer allowed
+
+15.	Melanoma LOT choices: If Disease Status is Metastatic, use existing answer choices used in Breast Cancer and other solid tumor types  1st Line Metastatic, 2nd Line Metastatic, 3rd Line Metastatic, 4th Line Metastatic, 5th Line or Greater, Maintenance and Unknown:
+
+ 
+Only one answer allowed
+
+16.	Please follow the same flow as other branches do after the Melanoma branch specific questions are answered.  This pertains to the other Diag screen questions as well as all current/previous Rx screen questions, non-Onc Rx questions, current/intended duration questions and managed care question.
+
+ 
+
+Melanoma Oncology Patient Visit survey branch (Indicator ID 150), add the following question and answer choices:
+
+Question:
+Resection status at this visit
+
+Answer Choices:
+Patient already had resection
+Resectable disease and will refer for surgery
+Resectable disease but no current plans for surgery
+Unresectable disease
+Unknown
+
+Answer choices should display in the order shown in the below right screenshot.   User can only select one option.  
+
+Resection status at this visit question will ONLY trigger if Stage at Diagnosis is IIIA, IIIB, IIIC or IV.  If Stage at Diagnosis is 0, I, IIA, or IIB, proceed to Disease Status question.  If Resection status at this visit triggers, it should appear between Stage at diagnosis and Disease Status.
+
+ 
+
+
+
+
+---------------------------------------------------------------------------------
+21  Oncology Myelofibrosis
+
+
+Oncology Patient Visit – Create ICD9 Myelofibrosis Indicator 
+Req 17
+Add Myelofibrosis ICD-9 Indicator in PLUM
+
+
+iPhone
+See Appendix A for indicator id.
+
+Pop Tool
+Add Myelofibrosis Cancer type – Id 22.
+
+Data Processing
+Describe requirement impact on data processing.
+
+Data Warehouse
+Include warehouse processing instructions and comments.
+
+
+
+
+ 
+Oncology Patient Visit – Add “Newly or Previously Diagnosed” Question
+Req 29
+In the Myelofibrosis Oncology Patient Visit survey branch (Indicator ID XX), add the following new question “Newly or Previously Diagnosed” with the following answer choices.
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory if asked
+•	Select one answer
+•	Question ID: 1
+•	Pop ID: DiagnosisType
+•	PLACEMENT OF QUESTION: First in flow
+
+ 		
+
+•	Values:
+1 = Newly
+2 = Previously
+
+ 
+Oncology Patient Visit – Add “IPSS Risk Status” Question
+Req 18
+In the Myelofibrosis Oncology Patient Visit survey branch (Indicator ID XX), add the following new question ”IPSS Risk Status” with the following answer choices.
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory if asked
+•	Select one answer
+•	Question ID: 2
+•	Pop ID: OncPtIPSSRiskStatus
+•	PLACEMENT OF QUESTION: After “Newly or Previously Diagnosed”
+
+ 		 
+
+•	Values:
+1 = Low 
+2 = Intermediate-1
+3 = Intermediate-2
+4 = High
+5 = Unknown
+
+ 
+										
+Oncology Patient Visit – Add “Mutational Status” Question
+Req 19
+In the Myelofibrosis Oncology Patient Visit survey branch (Indicator ID XX), add the following new question ”Mutational Status” with the following answer choices.
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory if asked
+•	Select one answer
+•	Question ID: 3
+•	Pop ID: OncPtMutationalStatus
+•	PLACEMENT OF QUESTION: After “IPSS Risk Status”
+
+ 		 
+
+•	Values:
+1 = JAK2V617F Mutation
+2 = MPLW515L Mutation
+3 = Other Mutation
+4 = No Mutation
+5 = No test
+6 = Unknown or Inconclusive
+
+ 
+													Oncology Patient Visit – Add “Splenomegaly Status” Question
+Req 20
+In the Myelofibrosis Oncology Patient Visit survey branch (Indicator ID XX), add the following new question ” Splenomegaly Status” with the following answer choices.
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory if asked
+•	Select one answer
+•	Question ID: 4
+•	Pop ID: OncPtSplenomegalyStatus
+•	PLACEMENT OF QUESTION: After “Mutational Status”
+
+ 		 
+
+•	Values:
+1 = Mild
+2 = Moderate
+3 = Severe
+4 = N/A
+
+ 
+Oncology Patient Visit – Add “Anemia Status (Hb g/dL)” Question
+Req 21
+In the Myelofibrosis Oncology Patient Visit survey branch (Indicator ID XX), add the following new question ”Anemia Status (Hb g/dL)” with the following answer choices.
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory if asked
+•	Select one answer
+•	Question ID: 5
+•	Pop ID: OncPtAnemiaStatus
+•	PLACEMENT OF QUESTION: After “Splenomegaly Status”
+
+ 		 
+
+•	Values:
+1 = Below 8.0
+2 = 8.0 to 9.9
+3 = 10.0 to 11.9
+4 = 12.0 or greater
+5 = Unknown
+
+ 
+														
+Oncology Patient Visit – Add “Current Platelet Level” Question
+Req 22
+In the Myelofibrosis Oncology Patient Visit survey branch (Indicator ID XX), add the following new question ”Current Platelet Level” with the following answer choices.
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory if asked
+•	Select one answer
+•	Question ID: 6
+•	Pop ID: PtPlateletLevel
+•	PLACEMENT OF QUESTION: After “Anemia Status (Hb g/dL)”
+
+ 		 
+
+•	Values:
+1 = Below 50,000 mL
+2 = 50,000 to 74,999 mL
+3 = 75,000 to 99,999 mL
+4 = 100,000 to 199,999 mL
+5 = 200,000 or greater mL
+6 = Unknown
+
+ 
+
+														
+Oncology Patient Visit – Add “Symptoms” Question
+Req 23
+In the Myelofibrosis Oncology Patient Visit survey branch (Indicator ID XX), add the following new question ”Symptoms” with the following answer choices.
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory if asked
+•	Select all that apply
+•	Question ID: 7
+•	Pop ID: OncPtSymptoms
+•	PLACEMENT OF QUESTION: After “Current Platelet Level”
+
+ 		 
+
+•	Values:
+1 = Fatigue
+2 = Night Sweats
+3 = Bone Pain
+4 = Fever
+5 = Abdominal Pain / Discomfort
+6 = Weight Loss > 5% Body Weight
+7 = Pruritis
+8 = Other
+
+ 
+
+													
+
+Oncology Patient Visit – Add “Has patient received a stem cell transplant?” Question
+Req 24
+In the Myelofibrosis Oncology Patient Visit survey branch (Indicator ID XX), add the following new question, ”Has patient received a stem cell transplant?” with the following answer choices.
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory if asked
+•	Select one
+•	Question ID: 8
+•	Pop ID: OncPtStemCellTransplant
+•	PLACEMENT OF QUESTION: After “Symptoms”
+
+ 		 
+
+•	Values:
+1 = Yes
+2 = No
+3 = No, but planned
+4 = Not a stem cell transplant candidate
+5 = Unknown
+
+ 
+Oncology Patient Visit – Add “Primary Goal of Therapy” Question
+Req 25
+In the Myelofibrosis Oncology Patient Visit survey branch (Indicator ID XX), add the following new question, ”Primary Goal of Therapy” with the following answer choices.
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory if asked
+•	Select one
+•	Question ID: 9
+•	Pop ID: OncPtStemCellTransplant
+•	PLACEMENT OF QUESTION: After “Has patient received a stem cell transplant?”
+
+ 		 
+
+•	Values:
+1 = Relieve myelofibrosis-associated symptoms
+2 = Reduce splenomegaly
+3 = Relieve symptoms associated with splenomegaly
+4 = Other
+
+ 
+													
+
+Pop Tool
+Add criteria to pop tool
+
+Data Processing
+Describe requirement impact on data processing.
+
+Data Warehouse
+Include warehouse processing instructions and comments.
+
+
+
+
+ 
+Oncology Patient Visit – Create Brand Jakaji Indicator 
+Req 26
+Add Myelofibrosis ICD-9 Indicator in PLUM
+
+
+iPhone
+See Appendix A for indicator id.
+
+Pop Tool
+None
+
+Data Processing
+Describe requirement impact on data processing.
+
+Data Warehouse
+Include warehouse processing instructions and comments.
+
+
+
+
+ 
+Oncology Patient Visit – Add Jakaji Form Strength 
+Req 27
+Add Form Strengths Associated with Jakafi Brands in PLUM
+
+
+iPhone
+See Appendix A for indicator id.
+
+Pop Tool
+None
+
+Data Processing
+Describe requirement impact on data processing.
+
+Data Warehouse
+Include warehouse processing instructions and comments.
+
+
+
+
+ 
+Oncology Patient Visit – Add “Dosing Schedule” Question
+Req 28
+In Oncology Patient Visit survey add the following new question, “Dosing Schedule” with the following answer choices. 
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory if asked.  Ask when brand selected belongs to Jakafi indicator (ID=18)
+•	Select one
+•	Question ID: 5
+•	Pop ID: OncPtDosingSchedule
+•	PLACEMENT OF QUESTION: After “Form Strength”
+
+ 		 
+
+•	Values:
+1 = QD
+2 = BID
+3 = Other
+
+ 
+														
+Oncology Patient Visit – Add “Line of Therapy” Question
+Req 30
+In the Myelofibrosis Oncology Patient Visit survey branch (Indicator ID XX), add the following new question, “Line of Therapy” with the following answer choices.
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory if asked.  Ask only for ICD9 Myelofibrosis
+•	Select one
+•	Question ID: 5
+•	Pop ID: OncPtLineOfTherapy
+•	PLACEMENT OF QUESTION: After “Form Strength”
+
+ 		 
+
+•	Values:
+1 = 1st Line
+2 = 2nd Line
+3 = 3rd Line
+4 = 4th Line or Greater
+6 = Maintenance
+
+ 
+														
+
+Oncology Patient Visit – Add “Dosing Schedule” Question to Previous Complete Regimen
+Req 33
+In Oncology Patient Visit survey add the following new question, “Dosing Schedule” with the following answer choices to complete previous regimen.
+iPhone
+Change applies to: xml.  
+•	Set <survey_response_version> = 6.7
+•	Set <survey_version>  = 1.7
+•	Question is mandatory if asked.  Ask when:
+o	 “In this calendar month, was a decision made to change the treatment/regimen for this patient?” = “Yes”  AND
+o	Brand selected in “What treatment/regimen was this patient on prior to the current treatment/regimen?” belongs to Jakafi indicator
+•	Select one
+•	Question ID: 4
+•	Pop ID: OncPtDosingSchedule
+•	PLACEMENT OF QUESTION: After “Form Strength”
+
+ 	 	 
+
+•	Values:
+1 = QD
+2 = BID
+3 = Other
+
+ 
+													
